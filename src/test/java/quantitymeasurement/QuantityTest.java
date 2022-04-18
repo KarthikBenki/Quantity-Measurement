@@ -16,4 +16,12 @@ public class QuantityTest {
         Feet feet2 = new Feet(1.0);
         Assert.assertNotEquals(feet1, feet2);
     }
+
+    @Test
+    public void givenNullFeetValue_shouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        Assert.assertFalse(feet.equals(null));
+        Assert.assertNotNull(feet);
+        Assert.assertNotEquals(null,feet);
+    }
 }
