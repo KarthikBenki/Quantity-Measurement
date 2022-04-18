@@ -20,4 +20,11 @@ public class Feet {
         return Double.compare(feet.value, value) == 0;
     }
 
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public double getValue() {
+        return value;
+    }
 }

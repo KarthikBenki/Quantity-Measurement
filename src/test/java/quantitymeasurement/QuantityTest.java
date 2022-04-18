@@ -52,4 +52,20 @@ public class QuantityTest {
         Inch inch = new Inch();
         Assert.assertNotEquals(feet,inch);
     }
+    @Test
+    public void givenSameValuesInDifferentObjects_shouldReturnEqual() {
+        Feet feet = new Feet();
+        feet.setValue(3);
+        Feet feet1 = new Feet();
+        feet1.setValue(3);
+        Assert.assertEquals(feet.getValue(),feet1.getValue(),0.0);
+    }
+    @Test
+    public void givenDifferentValuesInDifferentObjects_shouldReturnNotEqual() {
+        Feet feet = new Feet();
+        feet.setValue(3);
+        Feet feet1 = new Feet();
+        feet1.setValue(4);
+        Assert.assertNotEquals(feet.getValue(),feet1.getValue(),0.0);
+    }
 }
