@@ -40,5 +40,16 @@ public class QuantityTest {
         Assert.assertNotSame(feet,feet1);
     }
 
+    @Test
+    public void giveSameTypesOfObjects_shouldReturnEqual() {
+        Feet feet =new Feet();
+        Assert.assertEquals(feet,feet);
+    }
 
+    @Test
+    public void giveDifferentTypesOfObjects_shouldReturnNotEqual() {
+        Feet feet =new Feet();
+        Inch inch = new Inch();
+        Assert.assertNotEquals(feet,inch);
+    }
 }
