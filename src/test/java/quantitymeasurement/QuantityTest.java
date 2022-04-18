@@ -20,8 +20,25 @@ public class QuantityTest {
     @Test
     public void givenNullFeetValue_shouldReturnFalse() {
         Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
         Assert.assertFalse(feet.equals(null));
         Assert.assertNotNull(feet);
         Assert.assertNotEquals(null,feet);
     }
+
+    @Test
+    public void givenReferenceObject_WhenSame_ShouldReturnTrue() {
+        Feet feet =new Feet(0.0);
+        Feet feet1=new Feet(0.0) ;
+        Assert.assertSame(feet,feet);
+    }
+
+    @Test
+    public void givenReferenceObject_WhenNotSame_ShouldReturnTrue() {
+        Feet feet =new Feet(0.0);
+        Feet feet1=new Feet(0.0) ;
+        Assert.assertNotSame(feet,feet1);
+    }
+
+
 }

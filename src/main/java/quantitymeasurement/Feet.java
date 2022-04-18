@@ -1,10 +1,14 @@
 package quantitymeasurement;
 
 public class Feet {
-    private final double value;
+    private  double value=0.0;
 
     public Feet(double value) {
         this.value = value;
+    }
+
+    public Feet() {
+
     }
 
 
