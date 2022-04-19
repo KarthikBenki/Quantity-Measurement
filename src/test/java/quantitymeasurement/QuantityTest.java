@@ -124,7 +124,7 @@ public class QuantityTest {
     }
 
     /*
-    value check
+    value  equality check
      */
     @Test
     public void givenTwoSameValuesOfDifferentObjects_ShouldReturnEqual() {
@@ -133,6 +133,13 @@ public class QuantityTest {
         inch.setValue(1.0);
         inch1.setValue(1.0);
         Assert.assertEquals(inch.getValue(), inch1.getValue(),0.0);
+    }
+
+    @Test
+    public void givenTwoDifferentValuesOfDifferentObjects_ShouldReturnNotEqual() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(1.0);
+        Assert.assertNotEquals(inch.getValue(), inch1.getValue(),0.0);
     }
 
 
