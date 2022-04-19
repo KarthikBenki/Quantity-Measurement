@@ -86,4 +86,15 @@ public class QuantityTest {
         Inch inch2 = new Inch(1.0);
         Assert.assertNotEquals(inch1,inch2);
     }
+    /*
+    comparing the object with null
+     */
+    @Test
+    public void givenInchObjectWhenComparedWithNullValue_shouldReturnFalse() {
+        Inch inch1 = new Inch(0.0);
+        Assert.assertFalse(inch1.equals(null));
+        Assert.assertNotNull(inch1);
+        Assert.assertNotEquals(null,inch1);
+    }
+
 }
