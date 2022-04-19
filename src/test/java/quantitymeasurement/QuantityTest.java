@@ -97,4 +97,22 @@ public class QuantityTest {
         Assert.assertNotEquals(null,inch1);
     }
 
+    /*
+    reference check
+     */
+    @Test
+    public void givenInchReferenceObject_WhenSame_ShouldReturnTrue() {
+        Inch inch = new Inch(0.0);
+        Assert.assertSame(inch,inch);
+    }
+
+    @Test
+    public void givenInchReferenceObject_WhenNotSame_ShouldReturnTrue() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(0.0);
+        Assert.assertNotSame(inch,inch1);
+    }
+
+
+
 }
