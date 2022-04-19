@@ -68,4 +68,13 @@ public class QuantityTest {
         feet1.setValue(4);
         Assert.assertNotEquals(feet.getValue(),feet1.getValue(),0.0);
     }
+    /*
+    check for 0 inch and 0 inch
+     */
+    @Test
+    public void given0Inchand0Inch_ShouldReturnEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
+        Assert.assertEquals(inch1,inch2);
+    }
 }
