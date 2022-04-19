@@ -123,6 +123,18 @@ public class QuantityTest {
         Assert.assertNotEquals(inch, feet);
     }
 
+    /*
+    value check
+     */
+    @Test
+    public void givenTwoSameValuesOfDifferentObjects_ShouldReturnEqual() {
+        Inch inch = new Inch();
+        Inch inch1 = new Inch();
+        inch.setValue(1.0);
+        inch1.setValue(1.0);
+        Assert.assertEquals(inch.getValue(), inch1.getValue(),0.0);
+    }
+
 
 
 
