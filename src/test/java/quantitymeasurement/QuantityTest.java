@@ -113,6 +113,17 @@ public class QuantityTest {
         Assert.assertNotSame(inch,inch1);
     }
 
+    /*
+    type check for two objects
+     */
+    @Test
+    public void givenTwoTypesOfObject_WhenNotEqual_ShouldReturnTrue() {
+        Inch inch = new Inch(0.0);
+        Feet feet = new Feet(0.0);
+        Assert.assertNotEquals(inch, feet);
+    }
+
+
 
 
 }
