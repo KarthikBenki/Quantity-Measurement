@@ -165,4 +165,25 @@ public class QuantityTest {
         double value2 = quantityMeasurement.unitComparision(Units.INCH, 0.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
+
+    /*
+    TC1.14 1ft!=1In
+     */
+    @Test
+    public void given1Feetand1Inch_ShouldReturnNotEqual() {
+        double value1 = quantityMeasurement.unitComparision(Units.FEET, 1.0);
+        double value2 = quantityMeasurement.unitComparision(Units.INCH, 1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+
+    /*
+    TC1.14 1ft==12in
+     */
+    @Test
+    public void given1Feetand12Inch_ShouldReturnEqual() {
+        double value1 = quantityMeasurement.unitComparision(Units.FEET, 1.0);
+        double value2 = quantityMeasurement.unitComparision(Units.INCH, 12.0);
+        Assert.assertEquals(value1, value2, 0.0);
+    }
+
 }
