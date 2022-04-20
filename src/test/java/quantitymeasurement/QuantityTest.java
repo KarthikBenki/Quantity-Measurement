@@ -186,4 +186,23 @@ public class QuantityTest {
         Assert.assertEquals(value1, value2, 0.0);
     }
 
+    /*
+    as a math student i wish to compare lenghts 3ft ==1yd;
+     */
+    //0yd==0yd
+    @Test
+    public void given0yardand0yard_shouldReturnEqual(){
+        double value1 = quantityMeasurement.unitComparision(Units.YARD, 0.0);
+        double value2 = quantityMeasurement.unitComparision(Units.YARD, 0.0);
+        Assert.assertEquals(value1, value2,0.0);
+    }
+
+    @Test//0yd and 1yd
+    public void given0yardand1yard_shouldReturnEqual(){
+        double value1 = quantityMeasurement.unitComparision(Units.YARD, 0.0);
+        double value2 = quantityMeasurement.unitComparision(Units.YARD, 1.0);
+        Assert.assertNotEquals(value1, value2,0.0);
+    }
+
+
 }
