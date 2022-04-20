@@ -1,100 +1,99 @@
 package quantitymeasurement;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class QuantityTest {
+
+    private QuantityMeasurement quantityMeasurement;
+
+    @Before
+    public void init(){
+        quantityMeasurement = new QuantityMeasurement();
+    }
+
     @Test
     public void given0Feetand0Feet_ShouldReturnEqual() {
-        Feet feet1 = new Feet(0.0);
-        Feet feet2 = new Feet(0.0);
-        Assert.assertEquals(feet1, feet2);
+        double value1 = quantityMeasurement.unitComparision(Units.FEET,0.0);
+        double value2 = quantityMeasurement.unitComparision(Units.FEET,0.0);
+        Assert.assertEquals(value1,value2,0.0);
     }
     @Test
     public void given0Feetand1Feet_ShouldReturnNotEqual() {
-        Feet feet1 = new Feet(0.0);
-        Feet feet2 = new Feet(1.0);
-        Assert.assertNotEquals(feet1, feet2);
+        double value1 = quantityMeasurement.unitComparision(Units.FEET,1.0);
+        double value2 = quantityMeasurement.unitComparision(Units.FEET,0.0);
+        Assert.assertNotEquals(value1,value2,0.0);
     }
 
     @Test
     public void givenNullFeetValue_shouldReturnFalse() {
-        Feet feet = new Feet(0.0);
-        Feet feet1 = new Feet(0.0);
-        Assert.assertFalse(feet.equals(null));
-        Assert.assertNotNull(feet);
-        Assert.assertNotEquals(null,feet);
+        double value1 = quantityMeasurement.unitComparision(Units.FEET,0.0);
+        Assert.assertNotNull(value1);
     }
 
     @Test
     public void givenReferenceObject_WhenSame_ShouldReturnTrue() {
-        Feet feet =new Feet(0.0);
-        Feet feet1=new Feet(0.0) ;
-        Assert.assertSame(feet,feet);
+        Assert.assertSame(quantityMeasurement,quantityMeasurement);
     }
 
     @Test
     public void givenReferenceObject_WhenNotSame_ShouldReturnTrue() {
-        Feet feet =new Feet(0.0);
-        Feet feet1=new Feet(0.0) ;
-        Assert.assertNotSame(feet,feet1);
+       QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        Assert.assertNotSame(quantityMeasurement1,quantityMeasurement);
     }
 
     @Test
     public void giveSameTypesOfObjects_shouldReturnEqual() {
-        Feet feet =new Feet();
-        Assert.assertEquals(feet,feet);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        Assert.assertEquals(quantityMeasurement1,quantityMeasurement1);
     }
 
     @Test
     public void giveDifferentTypesOfObjects_shouldReturnNotEqual() {
-        Feet feet =new Feet();
-        Inch inch = new Inch();
-        Assert.assertNotEquals(feet,inch);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        QuantityTest quantityTest = new QuantityTest();
+        Assert.assertNotEquals(quantityMeasurement1,quantityTest);
     }
     @Test
     public void givenSameValuesInDifferentObjects_shouldReturnEqual() {
-        Feet feet = new Feet();
-        feet.setValue(3);
-        Feet feet1 = new Feet();
-        feet1.setValue(3);
-        Assert.assertEquals(feet.getValue(),feet1.getValue(),0.0);
+        double value1 = quantityMeasurement.unitComparision(Units.FEET,0.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        double value2 = quantityMeasurement1.unitComparision(Units.FEET,0.0);
+        Assert.assertEquals(value1,value2,0.0);
     }
     @Test
     public void givenDifferentValuesInDifferentObjects_shouldReturnNotEqual() {
-        Feet feet = new Feet();
-        feet.setValue(3);
-        Feet feet1 = new Feet();
-        feet1.setValue(4);
-        Assert.assertNotEquals(feet.getValue(),feet1.getValue(),0.0);
+        double value1 = quantityMeasurement.unitComparision(Units.FEET,0.0);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        double value2 = quantityMeasurement1.unitComparision(Units.FEET,1.0);
+        Assert.assertNotEquals(value1,value2,0.0);
     }
     /*
     check for 0 inch and 0 inch
      */
     @Test
     public void given0Inchand0Inch_ShouldReturnEqual() {
-        Inch inch1 = new Inch(0.0);
-        Inch inch2 = new Inch(0.0);
-        Assert.assertEquals(inch1,inch2);
+        double value1 = quantityMeasurement.unitComparision(Units.INCH,0.0);
+        double value2 = quantityMeasurement.unitComparision(Units.INCH,0.0);
+        Assert.assertEquals(value1,value2,0.0);
     }
     /*
     0 inch and 1 inch not equal
      */
     @Test
     public void given0Inchand1Inch_ShouldReturnNotEqual() {
-        Inch inch1 = new Inch(0.0);
-        Inch inch2 = new Inch(1.0);
-        Assert.assertNotEquals(inch1,inch2);
+        double value1 = quantityMeasurement.unitComparision(Units.INCH,0.0);
+        double value2 = quantityMeasurement.unitComparision(Units.INCH,1.0);
+        Assert.assertNotEquals(value1,value2,0.0);
     }
     /*
     comparing the object with null
      */
     @Test
     public void givenInchObjectWhenComparedWithNullValue_shouldReturnFalse() {
-        Inch inch1 = new Inch(0.0);
-        Assert.assertFalse(inch1.equals(null));
-        Assert.assertNotNull(inch1);
-        Assert.assertNotEquals(null,inch1);
+        double value1 = quantityMeasurement.unitComparision(Units.INCH,0.0);
+        Assert.assertNotNull(quantityMeasurement);
     }
 
     /*
@@ -102,15 +101,13 @@ public class QuantityTest {
      */
     @Test
     public void givenInchReferenceObject_WhenSame_ShouldReturnTrue() {
-        Inch inch = new Inch(0.0);
-        Assert.assertSame(inch,inch);
+        Assert.assertSame(quantityMeasurement,quantityMeasurement);
     }
 
     @Test
     public void givenInchReferenceObject_WhenNotSame_ShouldReturnTrue() {
-        Inch inch = new Inch(0.0);
-        Inch inch1 = new Inch(0.0);
-        Assert.assertNotSame(inch,inch1);
+       QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
+        Assert.assertNotSame(quantityMeasurement1,quantityMeasurement);
     }
 
     /*
@@ -118,9 +115,8 @@ public class QuantityTest {
      */
     @Test
     public void givenTwoTypesOfObject_WhenNotEqual_ShouldReturnTrue() {
-        Inch inch = new Inch(0.0);
-        Feet feet = new Feet(0.0);
-        Assert.assertNotEquals(inch, feet);
+        QuantityTest quantityTest = new QuantityTest();
+        Assert.assertNotEquals(quantityTest,quantityMeasurement);
     }
 
     /*
@@ -128,21 +124,16 @@ public class QuantityTest {
      */
     @Test
     public void givenTwoSameValuesOfDifferentObjects_ShouldReturnEqual() {
-        Inch inch = new Inch();
-        Inch inch1 = new Inch();
-        inch.setValue(1.0);
-        inch1.setValue(1.0);
-        Assert.assertEquals(inch.getValue(), inch1.getValue(),0.0);
+        double value1 = quantityMeasurement.unitComparision(Units.INCH,0.0);
+        double value2 = new QuantityMeasurement().unitComparision(Units.INCH,0.0);
+        Assert.assertEquals(value1, value2,0.0);
     }
 
     @Test
     public void givenTwoDifferentValuesOfDifferentObjects_ShouldReturnNotEqual() {
-        Inch inch = new Inch(0.0);
-        Inch inch1 = new Inch(1.0);
-        Assert.assertNotEquals(inch.getValue(), inch1.getValue(),0.0);
+        double value1 = quantityMeasurement.unitComparision(Units.INCH,0.0);
+        double value2 = new QuantityMeasurement().unitComparision(Units.INCH,1.0);
+        Assert.assertNotEquals(value1, value2,0.0);
     }
-
-
-
 
 }
