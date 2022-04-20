@@ -204,5 +204,13 @@ public class QuantityTest {
         Assert.assertNotEquals(value1, value2,0.0);
     }
 
-
+    /*
+    3ft==1yd
+     */
+    @Test
+    public void given3ftand1yd_shouldReturnEqual() {
+        double value1 = quantityMeasurement.unitComparision(Units.FEET,3);
+        double value2 = quantityMeasurement.unitComparision(Units.YARD,1);
+        Assert.assertEquals(value1, value2,0.0);
+    }
 }
