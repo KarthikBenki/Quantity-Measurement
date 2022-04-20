@@ -7,7 +7,7 @@ public class QuantityMeasurement {
     double inch;
 
     public double unitComparision(Units units, double value) {
-        return units.unit*value;
+        return units.unit * value;
     }
 
     @Override
@@ -15,7 +15,8 @@ public class QuantityMeasurement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.feet, feet) == 0 && Double.compare(that.inch, inch) == 0;
+        return Double.compare(that.feet, feet) == 0 &&
+                Double.compare(that.inch, inch) == 0;
     }
 
 
