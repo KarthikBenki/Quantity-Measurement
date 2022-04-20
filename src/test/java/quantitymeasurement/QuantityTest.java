@@ -223,4 +223,14 @@ public class QuantityTest {
         double value2 = quantityMeasurement.unitComparision(Units.YARD,1);
         Assert.assertNotEquals(value1, value2,0.0);
     }
+
+    /*
+    1 in != 1 yd
+     */
+    @Test
+    public void given1inand1yd_shouldReturnNotEqual() {
+        double value1 = quantityMeasurement.unitComparision(Units.INCH,1);
+        double value2 = quantityMeasurement.unitComparision(Units.YARD,1);
+        Assert.assertNotEquals(value1, value2,0.0);
+    }
 }
