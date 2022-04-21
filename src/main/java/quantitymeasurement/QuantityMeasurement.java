@@ -4,7 +4,7 @@ public class QuantityMeasurement {
     double feet;
     double inch;
 
-    public double unitConversion(Units units, Double value) {
+    public double unitConversion(LengthUnits units, Double value) {
         return units.unit * value;
     }
 
