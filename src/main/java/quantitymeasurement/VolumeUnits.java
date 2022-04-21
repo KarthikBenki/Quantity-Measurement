@@ -1,6 +1,6 @@
 package quantitymeasurement;
 
-public enum VolumeUnits {
+public enum VolumeUnits implements Units  {
     GALLON(3.78*1000),
     LITRE(1000),
     MILLILITER(1);
@@ -10,4 +10,12 @@ public enum VolumeUnits {
     VolumeUnits(double units) {
         this.unit=units;
     }
+
+
+    @Override
+    public double unitConversion(Double value) {
+        return unit * value;
+    }
+
+
 }
