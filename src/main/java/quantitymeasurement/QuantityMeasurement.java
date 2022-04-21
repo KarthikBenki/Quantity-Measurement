@@ -14,6 +14,5 @@ public class QuantityMeasurement {
         return unit1.unitConversion(value1) + unit2.unitConversion(value2);
     }
 
-//
 
 }
