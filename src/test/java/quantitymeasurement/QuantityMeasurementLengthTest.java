@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class QuantityTest {
+public class QuantityMeasurementLengthTest {
 
     private QuantityMeasurement quantityMeasurement;
 
@@ -53,7 +53,7 @@ public class QuantityTest {
     @Test
     public void giveDifferentTypesOfObjects_shouldReturnNotEqual() {
         QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement();
-        QuantityTest quantityTest = new QuantityTest();
+        QuantityMeasurementLengthTest quantityTest = new QuantityMeasurementLengthTest();
         Assert.assertNotEquals(quantityMeasurement1, quantityTest);
     }
 
@@ -121,7 +121,7 @@ public class QuantityTest {
      */
     @Test
     public void givenTwoTypesOfObject_WhenNotEqual_ShouldReturnTrue() {
-        QuantityTest quantityTest = new QuantityTest();
+        QuantityMeasurementLengthTest quantityTest = new QuantityMeasurementLengthTest();
         Assert.assertNotEquals(quantityTest, quantityMeasurement);
     }
 
