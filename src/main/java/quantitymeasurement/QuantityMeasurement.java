@@ -18,4 +18,7 @@ public class QuantityMeasurement {
     }
 
 
+    public double unitAddition(LengthUnits unit1, double value1, LengthUnits unit2, double value2) {
+        return unitConversion(unit1,value1)+unitConversion(unit2,value2);
+    }
 }

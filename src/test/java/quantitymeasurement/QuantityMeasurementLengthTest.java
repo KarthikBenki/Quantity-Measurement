@@ -358,4 +358,47 @@ public class QuantityMeasurementLengthTest {
         double value2 = quantityMeasurement.unitConversion(LengthUnits.CM, 180.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
+
+    /*
+    UC4 as a math student i want to be able to add  two lengths in inches
+     */
+    /*
+    2 in + 2 in = 4 in
+     */
+    @Test
+    public void given2InchAnd2InchWhenAdded_ShouldReturn4Inch(){
+        double value1 = quantityMeasurement.unitAddition(LengthUnits.INCH,2.0,LengthUnits.INCH,2.0);
+        double value2 = quantityMeasurement.unitConversion(LengthUnits.INCH,4.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    /*
+    1 ft + 2 in = 14 in
+     */
+    @Test
+    public void given1FeetAnd2InchWhenAdded_ShouldReturn14Inch(){
+        double value1 = quantityMeasurement.unitAddition(LengthUnits.FEET,1.0,LengthUnits.INCH,2.0);
+        double value2 = quantityMeasurement.unitConversion(LengthUnits.INCH,14.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    /*
+    1 ft + 1 ft = 24 in
+     */
+    @Test
+    public void given1FeetAnd1FeetWhenAdded_ShouldReturn24Inch(){
+        double value1 = quantityMeasurement.unitAddition(LengthUnits.FEET,1.0,LengthUnits.FEET,1.0);
+        double value2 = quantityMeasurement.unitConversion(LengthUnits.INCH,24.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    /*
+    2 in + 2.5 cm = 3 in
+     */
+    @Test
+    public void givenTwoInchAndTwoPointFiveCentimeterWhenAdded_ShouldReturn24Inch(){
+        double value1 = quantityMeasurement.unitAddition(LengthUnits.INCH,2.0,LengthUnits.CM,2.5);
+        double value2 = quantityMeasurement.unitConversion(LengthUnits.INCH,3.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
 }
